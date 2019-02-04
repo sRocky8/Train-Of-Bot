@@ -8,32 +8,52 @@ public class PlayerController : MonoBehaviour {
     public float speed;
 
     //Private Variables
-    private bool canTurnRight;
-    private bool canTurnLeft;
+    private bool canMoveRight;
+    private bool canMoveForward;
+    private Rigidbody rb;
     
 	// Use this for initialization
 	void Start () {
-        canTurnRight = true;
-        canTurnLeft = true;
+        rb = GetComponent<Rigidbody>();
+        canMoveRight = true;
+        canMoveForward = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-    private void FixedUpdate()
-    {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        if(moveVertical == 0.0f)
+        if (moveHorizontal != 0.0f)
         {
-            transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f));
+            if (canMoveRight)
+            {
+                canMoveForward = false;
+                transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f));
+            }
         }
-        if(moveHorizontal == 0.0f)
+        else
         {
-            transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f));
+            rb.velocity.x = 0.0f;
+            canMoveForward = true;
         }
+
+        if (moveVertical != 0.0f)
+        {
+            if (canMoveForward == true)
+            {
+                canMoveRight = false;
+                transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f));
+            }
+        }
+        else
+        {
+            canMoveRight = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+
     }
 }
