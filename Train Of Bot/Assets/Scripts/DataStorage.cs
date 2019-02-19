@@ -24,6 +24,11 @@ public class DataStorage : MonoBehaviour {
         }
     }
 
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 100, 80), "test float: " + testFloat);
+    }
+
     // Use this for initialization
     void Start () {
 		

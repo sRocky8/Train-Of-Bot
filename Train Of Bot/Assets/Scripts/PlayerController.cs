@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
     //Public Variables
+    public static PlayerController player;
+
     public float speed;
 
     //Private Variables
@@ -12,9 +15,23 @@ public class PlayerController : MonoBehaviour {
     private bool canMoveForward;
     private Rigidbody rb;
     private CharacterController characterController;
-    
-	// Use this for initialization
-	void Start () {
+
+
+    private void Awake()
+    {
+        if (player == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            player = this;
+        }
+        else if (player != null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         canMoveRight = true;
@@ -88,5 +105,17 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate()
     {
 
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "NextScene")
+        {
+            SceneManager.LoadScene(1);
+        }
+        if(other.tag == "PreviousScene")
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
