@@ -10,6 +10,7 @@ public class DataStorage : MonoBehaviour {
     public static DataStorage dataStorage;
 
     public float testFloat;
+    public Vector3 storageRoomBoxPos;
 
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class DataStorage : MonoBehaviour {
 
         Data data = new Data();
         data.testFloat = 0.0f;
+        data.storageRoomBoxPos = StorageRoomBox.FindObjectOfType<Transform>().position;
 
 //        Data data = new Data
 //        {
@@ -66,6 +68,7 @@ public class DataStorage : MonoBehaviour {
             dataFile.Close();
 
             testFloat = data.testFloat;
+            storageRoomBoxPos = data.storageRoomBoxPos;
         }
     }
 
@@ -73,5 +76,6 @@ public class DataStorage : MonoBehaviour {
     class Data
     {
         public float testFloat;
+        public Vector3 storageRoomBoxPos;
     }
 }
