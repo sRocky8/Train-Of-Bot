@@ -47,22 +47,26 @@ public class PlayerController : MonoBehaviour {
         if (moveHorizontal > 0.0f)
         {
 //            direction.x = 1.0f;
-            transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f));
+            transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
+            transform.eulerAngles = new Vector3(0.0f, 90.0f, 0.0f);
         }
         else if (moveHorizontal < 0.0f)
         {
 //            direction.x = -1.0f;
-            transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f));
+            transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
+            transform.eulerAngles = new Vector3(0.0f, 270.0f, 0.0f);
         }
         else if (moveVertical > 0.0f)
         {
-//            direction.z = 1.0f;
-            transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f));
+            //            direction.z = 1.0f;
+            transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
+            transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
         }
         else if (moveVertical < 0.0f)
         {
 //            direction.z = -1.0f;
-            transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f));
+            transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
+            transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
         }
 //        transform.Translate(direction * (speed / 100.0f) * Time.deltaTime, Space.World);
 
