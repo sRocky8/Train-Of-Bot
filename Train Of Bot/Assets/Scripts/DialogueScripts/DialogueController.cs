@@ -20,6 +20,11 @@ public class DialogueController : MonoBehaviour {
         endedDialogue = true;
 	}
 
+    void Update()
+    {
+        
+    }
+
     public void StartDialogue(DialogueClass npcDialogue)
     {
         endedDialogue = false;
@@ -30,6 +35,8 @@ public class DialogueController : MonoBehaviour {
         {
             linesOfDialogue.Enqueue(line);
         }
+
+        ShowNextLine();
     }
 
     public void ShowNextLine()

@@ -3,7 +3,12 @@ guid: 0f86faaa6f8ac074fa8a6cb07079e368
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - npcNameText: {fileID: 114072927655798290, guid: aa4841e1948145b498864117eae0b9cc,
+      type: 2}
+  - npcDialogueText: {fileID: 114904659077664806, guid: aa4841e1948145b498864117eae0b9cc,
+      type: 2}
+  - textBox: {fileID: 1744880952362180, guid: aa4841e1948145b498864117eae0b9cc, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

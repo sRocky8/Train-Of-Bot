@@ -49,33 +49,34 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        if (moveHorizontal > 0.0f)
+        if (inConversation == false)
         {
-            transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
-            transform.eulerAngles = new Vector3(0.0f, 90.0f, 0.0f);
-        }
-        else if (moveHorizontal < 0.0f)
-        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-            transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
-            transform.eulerAngles = new Vector3(0.0f, 270.0f, 0.0f);
-        }
-        else if (moveVertical > 0.0f)
-        {
-            transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
-            transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
-        }
-        else if (moveVertical < 0.0f)
-        {
+            if (moveHorizontal > 0.0f)
+            {
+                transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
+                transform.eulerAngles = new Vector3(0.0f, 90.0f, 0.0f);
+            }
+            else if (moveHorizontal < 0.0f)
+            {
 
-            transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
-            transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
-        }
+                transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
+                transform.eulerAngles = new Vector3(0.0f, 270.0f, 0.0f);
+            }
+            else if (moveVertical > 0.0f)
+            {
+                transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
+                transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+            }
+            else if (moveVertical < 0.0f)
+            {
 
+                transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
+                transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
+            }
+        }
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
         {

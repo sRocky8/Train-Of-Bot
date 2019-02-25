@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: ce69dbb12a944084da6c083ec119f2af
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: antenna
+    100002: backnurbsCube1
+    100004: //RootNode
+    100006: Beep1
+    100008: Beep_antena_1
+    100010: Beep_antena_2
+    100012: Beep_antena_3
+    100014: Beep_antena_4
+    100016: Beep_chest
+    100018: Beep_head
+    100020: Beep_l_arm_1
+    100022: Beep_l_arm_2
+    100024: Beep_l_bot_claw_1
+    100026: Beep_l_bot_claw_2
+    100028: Beep_l_shoulder
+    100030: Beep_l_top_claw_1
+    100032: Beep_l_top_claw_2
+    100034: Beep_l_wrist
+    100036: Beep_neck_1
+    100038: Beep_neck_2
+    100040: Beep_r_arm_1
+    100042: Beep_r_arm_2
+    100044: Beep_r_bot_claw_1
+    100046: Beep_r_bot_claw_2
+    100048: Beep_r_shoulder
+    100050: Beep_r_top_claw_1
+    100052: Beep_r_top_claw_2
+    100054: Beep_r_wrist
+    100056: Beep_root
+    100058: beep_tilt
+    100060: Beep_world_pos1
+    100062: bottomnurbsCube1
+    100064: Character1_Reference
+    100066: frontnurbsCube1
+    100068: l_arm_1_manipulator
+    100070: l_arm_2_manipulator
+    100072: l_arm_grip_manipulator
+    100074: l_shoulder_manipulator1
+    100076: l_wrist_manipulator
+    100078: leftnurbsCube1
+    100080: neck_controller
+    100082: nurbsCube1
+    100084: r_arm_1_manipulator
+    100086: r_arm_2_manipulator
+    100088: r_arm_grip_manipulator
+    100090: r_shoulder_manipulator
+    100092: r_wrist_manipulator
+    100094: rightnurbsCube1
+    100096: topnurbsCube1
+    100098: waist_controller
+    400000: antenna
+    400002: backnurbsCube1
+    400004: //RootNode
+    400006: Beep1
+    400008: Beep_antena_1
+    400010: Beep_antena_2
+    400012: Beep_antena_3
+    400014: Beep_antena_4
+    400016: Beep_chest
+    400018: Beep_head
+    400020: Beep_l_arm_1
+    400022: Beep_l_arm_2
+    400024: Beep_l_bot_claw_1
+    400026: Beep_l_bot_claw_2
+    400028: Beep_l_shoulder
+    400030: Beep_l_top_claw_1
+    400032: Beep_l_top_claw_2
+    400034: Beep_l_wrist
+    400036: Beep_neck_1
+    400038: Beep_neck_2
+    400040: Beep_r_arm_1
+    400042: Beep_r_arm_2
+    400044: Beep_r_bot_claw_1
+    400046: Beep_r_bot_claw_2
+    400048: Beep_r_shoulder
+    400050: Beep_r_top_claw_1
+    400052: Beep_r_top_claw_2
+    400054: Beep_r_wrist
+    400056: Beep_root
+    400058: beep_tilt
+    400060: Beep_world_pos1
+    400062: bottomnurbsCube1
+    400064: Character1_Reference
+    400066: frontnurbsCube1
+    400068: l_arm_1_manipulator
+    400070: l_arm_2_manipulator
+    400072: l_arm_grip_manipulator
+    400074: l_shoulder_manipulator1
+    400076: l_wrist_manipulator
+    400078: leftnurbsCube1
+    400080: neck_controller
+    400082: nurbsCube1
+    400084: r_arm_1_manipulator
+    400086: r_arm_2_manipulator
+    400088: r_arm_grip_manipulator
+    400090: r_shoulder_manipulator
+    400092: r_wrist_manipulator
+    400094: rightnurbsCube1
+    400096: topnurbsCube1
+    400098: waist_controller
+    2100000: lambert2
+    4300000: Beep1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Beep1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -29,6 +29,7 @@ public class CharacterDialogue : MonoBehaviour {
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
         {
+            Debug.Log("hit Player");
             lookingAtPlayer = true;
         }
         else
