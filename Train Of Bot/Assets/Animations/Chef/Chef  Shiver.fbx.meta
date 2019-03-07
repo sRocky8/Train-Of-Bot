@@ -98,8 +98,24 @@ ModelImporter:
     4300000: Chef_Mesh
     7400000: Take 001
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Chef_Mesh
     2186277476908879412: ImportLogs
+    7973541674914708964: bot_lip
+    7973541674914708966: Chef_chest
+    7973541674914708968: Chef_Core
+    7973541674914708970: Chef_hip
+    7973541674914708972: Chef_l_hand
+    7973541674914708974: Chef_l_shoulder
+    7973541674914708976: Chef_neck_1
+    7973541674914708978: Chef_r_hand
+    7973541674914708980: Chef_r_shoulder
+    7973541674914708982: Hat_ik
+    7973541674914708984: l_eye
+    7973541674914708986: l_stache_tip
+    7973541674914708988: r_eye
+    7973541674914708990: r_stache_tip
+    7973541674914708992: top_lip
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -119,7 +135,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -174,10 +190,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
