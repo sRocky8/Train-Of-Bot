@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: d3ea663172b6c6a4196af59923b636fd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bot_lip
+    100002: Bot_Lip_controller
+    100004: //RootNode
+    100006: Chef_chest
+    100008: Chef_Core
+    100010: Chef_hat_1
+    100012: Chef_hat_2
+    100014: Chef_hat_3
+    100016: Chef_hat_4
+    100018: Chef_hat_5
+    100020: Chef_head
+    100022: Chef_hip
+    100024: Chef_l_hand
+    100026: Chef_l_shoulder
+    100028: Chef_l_wrist
+    100030: Chef_Mesh
+    100032: Chef_neck_1
+    100034: Chef_neck_2
+    100036: Chef_neck_3
+    100038: Chef_r_hand
+    100040: Chef_r_shoulder
+    100042: Chef_r_wrist
+    100044: Chef_wheel
+    100046: Chef_wheel_joint
+    100048: Chest_controller
+    100050: Core_controller
+    100052: Hat_controller
+    100054: Hat_ik
+    100056: l_eye
+    100058: L_Eye_controller
+    100060: L_Hand_controller
+    100062: L_Shoulder_controller
+    100064: L_Stache_controller
+    100066: l_stache_tip
+    100068: Neck_controller
+    100070: r_eye
+    100072: R_Eye_controller
+    100074: R_Hand_controller
+    100076: R_Shoulder_controller
+    100078: R_Stache_controller
+    100080: r_stache_tip
+    100082: side1
+    100084: top_lip
+    100086: Top_Lip_controller
+    100088: Wheel_controller
+    400000: bot_lip
+    400002: Bot_Lip_controller
+    400004: //RootNode
+    400006: Chef_chest
+    400008: Chef_Core
+    400010: Chef_hat_1
+    400012: Chef_hat_2
+    400014: Chef_hat_3
+    400016: Chef_hat_4
+    400018: Chef_hat_5
+    400020: Chef_head
+    400022: Chef_hip
+    400024: Chef_l_hand
+    400026: Chef_l_shoulder
+    400028: Chef_l_wrist
+    400030: Chef_Mesh
+    400032: Chef_neck_1
+    400034: Chef_neck_2
+    400036: Chef_neck_3
+    400038: Chef_r_hand
+    400040: Chef_r_shoulder
+    400042: Chef_r_wrist
+    400044: Chef_wheel
+    400046: Chef_wheel_joint
+    400048: Chest_controller
+    400050: Core_controller
+    400052: Hat_controller
+    400054: Hat_ik
+    400056: l_eye
+    400058: L_Eye_controller
+    400060: L_Hand_controller
+    400062: L_Shoulder_controller
+    400064: L_Stache_controller
+    400066: l_stache_tip
+    400068: Neck_controller
+    400070: r_eye
+    400072: R_Eye_controller
+    400074: R_Hand_controller
+    400076: R_Shoulder_controller
+    400078: R_Stache_controller
+    400080: r_stache_tip
+    400082: side1
+    400084: top_lip
+    400086: Top_Lip_controller
+    400088: Wheel_controller
+    2000000: side1
+    2100000: lambert2
+    4300000: Chef_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Chef_Mesh
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

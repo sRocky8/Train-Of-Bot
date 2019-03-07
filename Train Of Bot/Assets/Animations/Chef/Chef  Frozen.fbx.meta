@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: 8d4e3ee4af9bd754c833bbf594123c85
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bot_lip
+    100002: Bot_Lip_controller
+    100004: //RootNode
+    100006: Chef_chest
+    100008: Chef_Core
+    100010: Chef_hat_1
+    100012: Chef_hat_2
+    100014: Chef_hat_3
+    100016: Chef_hat_4
+    100018: Chef_hat_5
+    100020: Chef_head
+    100022: Chef_hip
+    100024: Chef_l_hand
+    100026: Chef_l_shoulder
+    100028: Chef_l_wrist
+    100030: Chef_Mesh
+    100032: Chef_mesh
+    100034: Chef_neck_1
+    100036: Chef_neck_2
+    100038: Chef_neck_3
+    100040: Chef_r_hand
+    100042: Chef_r_shoulder
+    100044: Chef_r_wrist
+    100046: Chef_wheel
+    100048: Chef_wheel_joint
+    100050: Chest_controller
+    100052: Core_controller
+    100054: Hat_controller
+    100056: Hat_ik
+    100058: l_eye
+    100060: L_Eye_controller
+    100062: L_Hand_controller
+    100064: L_Shoulder_controller
+    100066: L_Stache_controller
+    100068: l_stache_tip
+    100070: Neck_controller
+    100072: polySurface1
+    100074: polySurface10
+    100076: polySurface11
+    100078: polySurface2
+    100080: polySurface2 1
+    100082: polySurface3
+    100084: polySurface4
+    100086: polySurface5
+    100088: polySurface6
+    100090: polySurface6 1
+    100092: polySurface7
+    100094: polySurface7 1
+    100096: polySurface8
+    100098: polySurface8 1
+    100100: polySurface9
+    100102: polySurface9 1
+    100104: r_eye
+    100106: R_Eye_controller
+    100108: R_Hand_controller
+    100110: R_Shoulder_controller
+    100112: R_Stache_controller
+    100114: r_stache_tip
+    100116: top_lip
+    100118: Top_Lip_controller
+    100120: transform1
+    100122: transform10
+    100124: transform11
+    100126: transform12
+    100128: transform13
+    100130: transform14
+    100132: transform15
+    100134: transform16
+    100136: transform17
+    100138: transform2
+    100140: transform3
+    100142: transform4
+    100144: transform5
+    100146: transform6
+    100148: transform7
+    100150: transform8
+    100152: transform9
+    100154: Wheel_controller
+    400000: bot_lip
+    400002: Bot_Lip_controller
+    400004: //RootNode
+    400006: Chef_chest
+    400008: Chef_Core
+    400010: Chef_hat_1
+    400012: Chef_hat_2
+    400014: Chef_hat_3
+    400016: Chef_hat_4
+    400018: Chef_hat_5
+    400020: Chef_head
+    400022: Chef_hip
+    400024: Chef_l_hand
+    400026: Chef_l_shoulder
+    400028: Chef_l_wrist
+    400030: Chef_Mesh
+    400032: Chef_mesh
+    400034: Chef_neck_1
+    400036: Chef_neck_2
+    400038: Chef_neck_3
+    400040: Chef_r_hand
+    400042: Chef_r_shoulder
+    400044: Chef_r_wrist
+    400046: Chef_wheel
+    400048: Chef_wheel_joint
+    400050: Chest_controller
+    400052: Core_controller
+    400054: Hat_controller
+    400056: Hat_ik
+    400058: l_eye
+    400060: L_Eye_controller
+    400062: L_Hand_controller
+    400064: L_Shoulder_controller
+    400066: L_Stache_controller
+    400068: l_stache_tip
+    400070: Neck_controller
+    400072: polySurface1
+    400074: polySurface10
+    400076: polySurface11
+    400078: polySurface2
+    400080: polySurface2 1
+    400082: polySurface3
+    400084: polySurface4
+    400086: polySurface5
+    400088: polySurface6
+    400090: polySurface6 1
+    400092: polySurface7
+    400094: polySurface7 1
+    400096: polySurface8
+    400098: polySurface8 1
+    400100: polySurface9
+    400102: polySurface9 1
+    400104: r_eye
+    400106: R_Eye_controller
+    400108: R_Hand_controller
+    400110: R_Shoulder_controller
+    400112: R_Stache_controller
+    400114: r_stache_tip
+    400116: top_lip
+    400118: Top_Lip_controller
+    400120: transform1
+    400122: transform10
+    400124: transform11
+    400126: transform12
+    400128: transform13
+    400130: transform14
+    400132: transform15
+    400134: transform16
+    400136: transform17
+    400138: transform2
+    400140: transform3
+    400142: transform4
+    400144: transform5
+    400146: transform6
+    400148: transform7
+    400150: transform8
+    400152: transform9
+    400154: Wheel_controller
+    2100000: lambert2
+    4300000: Chef_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Chef_Mesh
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Channel_lambert1_Diffuse
+    second: {fileID: 2800000, guid: 4448546abefa34b47b6ce9362fc2e6f8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: horizon
+    second: {fileID: 2800000, guid: cf399ddf9076b34418e5ef6e9a729ca5, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

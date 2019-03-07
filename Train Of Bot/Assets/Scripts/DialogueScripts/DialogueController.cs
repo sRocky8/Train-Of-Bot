@@ -31,6 +31,7 @@ public class DialogueController : MonoBehaviour {
         textBox.SetActive(true);
         npcNameText.text = npcDialogue.npcName;
         linesOfDialogue.Clear();
+        Debug.Log("Started Dialogue");
         foreach (string line in npcDialogue.linesOfDialogue)
         {
             linesOfDialogue.Enqueue(line);
@@ -44,6 +45,7 @@ public class DialogueController : MonoBehaviour {
         if (linesOfDialogue.Count == 0)
         {
             EndDialogue();
+            Debug.Log("Ended Dialogue");
             return;
         }
 

@@ -67,5 +67,6 @@ public class CharacterDialogue : MonoBehaviour {
     public void ContinueDialogue()
     {
         FindObjectOfType<DialogueController>().ShowNextLine();
+        Debug.Log("Continued Dialogue");
     }
 }
