@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueController : MonoBehaviour {
 
@@ -9,20 +10,27 @@ public class DialogueController : MonoBehaviour {
     public Text npcNameText;
     public Text npcDialogueText;
     public GameObject textBox;
-    public bool endedDialogue;
+    [HideInInspector]public bool endedDialogue;
 
     //Private Variables
     private Queue<string> linesOfDialogue;
+    private int currentScene;
+    private int lastScene;
+    private GameObject npcNameTextGameObject;
+    private GameObject npcDialogueTextGameObject;
 
-
-	void Start () {
+    void Start () {
         linesOfDialogue = new Queue<string>();
+
         endedDialogue = true;
-	}
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        lastScene = currentScene;
+    }
 
     void Update()
     {
-        
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        lastScene = currentScene;
     }
 
     public void StartDialogue(DialogueClass npcDialogue)
@@ -31,7 +39,6 @@ public class DialogueController : MonoBehaviour {
         textBox.SetActive(true);
         npcNameText.text = npcDialogue.npcName;
         linesOfDialogue.Clear();
-        Debug.Log("Started Dialogue");
         foreach (string line in npcDialogue.linesOfDialogue)
         {
             linesOfDialogue.Enqueue(line);
@@ -45,7 +52,6 @@ public class DialogueController : MonoBehaviour {
         if (linesOfDialogue.Count == 0)
         {
             EndDialogue();
-            Debug.Log("Ended Dialogue");
             return;
         }
 

@@ -113,6 +113,127 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &31395370
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.221615
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32587d346ce292840bf307fd29a58227, type: 3}
+  m_IsPrefabAsset: 0
+--- !u!1 &31395371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 32587d346ce292840bf307fd29a58227,
+    type: 3}
+  m_PrefabInternal: {fileID: 31395370}
+--- !u!114 &31395372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31395371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f32d68092ac4e4dadf0999b877c6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endedDialogue: 0
+  inConversation: 0
+  rayMaxDistance: 2
+  npcDialogue:
+    npcName: DUMMY 2
+    linesOfDialogue:
+    - Test1
+    - 'Testing
+
+      2'
+    - 'Testing
+
+      3
+
+      !'
+    - this is 4
+--- !u!65 &31395373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31395371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.749318, y: 2.7451735, z: 1.1848829}
+  m_Center: {x: 0, y: 1.2407665, z: -0.2233903}
+--- !u!54 &31395374
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31395371}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
