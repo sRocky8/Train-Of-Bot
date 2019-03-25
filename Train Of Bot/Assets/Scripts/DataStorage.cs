@@ -11,6 +11,8 @@ public class DataStorage : MonoBehaviour {
 
     public float testFloat;
     public Vector3 storageRoomBoxPos;
+    public bool testCharacterCanRecieve;
+    public bool testCharacterCanGive;
 
     private void Awake()
     {
@@ -30,16 +32,6 @@ public class DataStorage : MonoBehaviour {
         GUI.Label(new Rect(10, 10, 100, 80), "test float: " + testFloat);
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void Save()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -48,6 +40,8 @@ public class DataStorage : MonoBehaviour {
         Data data = new Data();
         data.testFloat = 0.0f;
         data.storageRoomBoxPos = StorageRoomBox.FindObjectOfType<Transform>().position;
+        data.testCharacterCanRecieve = true;
+        data.testCharacterCanGive = true;
 
 //        Data data = new Data
 //        {
@@ -69,6 +63,8 @@ public class DataStorage : MonoBehaviour {
 
             testFloat = data.testFloat;
             storageRoomBoxPos = data.storageRoomBoxPos;
+            testCharacterCanRecieve = data.testCharacterCanRecieve;
+            testCharacterCanGive = data.testCharacterCanGive;
         }
     }
 
@@ -77,5 +73,7 @@ public class DataStorage : MonoBehaviour {
     {
         public float testFloat;
         public Vector3 storageRoomBoxPos;
+        public bool testCharacterCanRecieve;
+        public bool testCharacterCanGive;
     }
 }

@@ -7,24 +7,26 @@ public class CharacterDialogue : MonoBehaviour {
     //Public Variables
     [HideInInspector] public bool endedDialogue;
     [HideInInspector] public bool inConversation;
+    [HideInInspector] public bool canGiveItem;
+    [HideInInspector] public bool canRecieveItem;
     public float rayMaxDistance;
     public int dialogueParameter;
     public DialogueClass npcDialogue;
 
     //Private Variables
     private int layerMask1;
-    private int layerMask2;
+//    private int layerMask2;
     private bool lookingAtPlayer;
     private bool playerLooking;
 
 	void Start () {
         layerMask1 = 1 << 10;
-        layerMask2 = 1 << 11;
+//        layerMask2 = 1 << 11;
         inConversation = false;
         endedDialogue = FindObjectOfType<DialogueController>().endedDialogue;
 
         //TESTING DIALOGUE PARAMETER VARIABLE
-        dialogueParameter = 1;
+        //dialogueParameter = 1;
 
 	}
 	
@@ -61,6 +63,27 @@ public class CharacterDialogue : MonoBehaviour {
         {
             ContinueDialogue();
         }
+
+        //TEST
+        if(gameObject.tag == "Main_Char_Model")
+        {
+
+
+            dialogueParameter = 0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 
     public void ActivateDialogue()
