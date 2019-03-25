@@ -8,6 +8,7 @@ public class CharacterDialogue : MonoBehaviour {
     [HideInInspector] public bool endedDialogue;
     [HideInInspector] public bool inConversation;
     public float rayMaxDistance;
+    public int dialogueParameter;
     public DialogueClass npcDialogue;
 
     //Private Variables
@@ -21,6 +22,10 @@ public class CharacterDialogue : MonoBehaviour {
         layerMask2 = 1 << 11;
         inConversation = false;
         endedDialogue = FindObjectOfType<DialogueController>().endedDialogue;
+
+        //TESTING DIALOGUE PARAMETER VARIABLE
+        dialogueParameter = 1;
+
 	}
 	
 	void Update () {
@@ -60,7 +65,7 @@ public class CharacterDialogue : MonoBehaviour {
 
     public void ActivateDialogue()
     {
-        FindObjectOfType<DialogueController>().StartDialogue(npcDialogue);
+        FindObjectOfType<DialogueController>().StartDialogue(npcDialogue, dialogueParameter);
         inConversation = true;
     }
 

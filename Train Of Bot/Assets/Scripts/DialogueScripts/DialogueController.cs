@@ -33,13 +33,13 @@ public class DialogueController : MonoBehaviour {
         lastScene = currentScene;
     }
 
-    public void StartDialogue(DialogueClass npcDialogue)
+    public void StartDialogue(DialogueClass npcDialogue, int dialogueParameter)
     {
         endedDialogue = false;
         textBox.SetActive(true);
         npcNameText.text = npcDialogue.npcName;
         linesOfDialogue.Clear();
-        foreach (string line in npcDialogue.linesOfDialogue)
+        foreach (string line in npcDialogue.dialogueAmount[dialogueParameter].linesOfDialogue)
         {
             linesOfDialogue.Enqueue(line);
         }

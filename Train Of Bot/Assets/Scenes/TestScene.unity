@@ -333,19 +333,31 @@ MonoBehaviour:
   endedDialogue: 0
   inConversation: 0
   rayMaxDistance: 2
+  dialogueParameter: 0
   npcDialogue:
     npcName: DUMMY
-    linesOfDialogue:
-    - Test1
-    - 'Test
+    dialogueAmount:
+    - parameterDescription: Test Parameter 1
+      linesOfDialogue:
+      - Test 1
+      - 'Test
 
-      2'
-    - 'Test
+        2'
+      - 'Test
 
-      3
+        3
 
-      !'
-    - 4
+        monkaPog'
+    - parameterDescription: P2
+      linesOfDialogue:
+      - Test 4
+      - Test 5
+      - 6
+      - 7
+    - parameterDescription: 
+      linesOfDialogue: []
+    - parameterDescription: 
+      linesOfDialogue: []
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
