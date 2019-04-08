@@ -734,6 +734,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114330593674967238, guid: 8f3f6ebabe6f7df47bf3ad24812904a6,
+        type: 2}
+      propertyPath: inventory.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114330593674967238, guid: 8f3f6ebabe6f7df47bf3ad24812904a6,
+        type: 2}
+      propertyPath: inventoryImage.Array.size
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4183297566631014, guid: 8f3f6ebabe6f7df47bf3ad24812904a6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.9491982
@@ -769,20 +779,6 @@ Prefab:
     - target: {fileID: 224821732403899890, guid: 8f3f6ebabe6f7df47bf3ad24812904a6,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114911685778609676, guid: 8f3f6ebabe6f7df47bf3ad24812904a6,
-        type: 2}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 223297243968892170, guid: 8f3f6ebabe6f7df47bf3ad24812904a6,
-        type: 2}
-      propertyPath: m_PixelPerfect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378565450245394, guid: 8f3f6ebabe6f7df47bf3ad24812904a6, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

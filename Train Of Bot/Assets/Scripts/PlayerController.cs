@@ -1,13 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+public enum Items
+{
+    Nothing = 0,
+    Earmuffs,
+    TP,
+    CabinetKey,
+    BottleOfBolts,
+    GasCanister,
+    FrozenMechanicalDinner,
+    CookedMechanicalDinner,
+    Plunger,
+    PassengersEye,
+    Valve,
+    ChefsSpoon,
+    Rattle
+};
 
 public class PlayerController : MonoBehaviour {
 
     //Public Variables
     public static PlayerController player;
-
+    public Items item;
+    public Image[] inventory;
+    public Image[] inventoryImage;
     [HideInInspector] public bool inConversation;
     [HideInInspector] public bool lookingAtSpeaker;
 
@@ -27,15 +47,11 @@ public class PlayerController : MonoBehaviour {
     //    private bool canMoveRight;
     //    private bool canMoveForward;
     //    private Rigidbody rb;
+    private bool fullInventory;
     private int layerMask1;
     private int layerMask2;
     private int currentScene;
-    
-    
-
     private RectTransform highlightChoiceV3;
-
-
 
     private void Awake()
     {
@@ -50,7 +66,6 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
     void Start () {
         //        rb = GetComponent<Rigidbody>();
         //        canMoveRight = true;
@@ -66,6 +81,43 @@ public class PlayerController : MonoBehaviour {
         inConversation = false;
         inMenu = false;
         inInventory = false;
+
+        int itemToNumber = (int)item;
+
+        switch (itemToNumber) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+        }
+
+        for(int i = 0; i < inventory.Length; i++)
+        {
+            inventory[i] = inventoryImage[0];
+        }
+        
 	}
 	
 	// Update is called once per frame
@@ -74,7 +126,7 @@ public class PlayerController : MonoBehaviour {
         {
             if (inMenu == false)
             {
-                if (Input.GetKeyDown(KeyCode.E) == true)
+                if (Input.GetKeyDown(KeyCode.E) == true && inConversation == false)
                 {
 
                     inMenu = true;
@@ -133,15 +185,16 @@ public class PlayerController : MonoBehaviour {
                 {
                     highlightedPos = 1;
                 }
-                else if (Input.GetKeyDown(KeyCode.E) == true)
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-//                    inMenu = false;
-//                    choiceUI.SetActive(false);
+                    inMenu = false;
+                    choiceUI.SetActive(false);
                 }
             }
             //TAKE
             else if (highlightedPos == 1)
             {
+                CheckForZeros();
                 if (Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true)
                 {
                     highlightedPos = 0;
@@ -150,7 +203,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     highlightedPos = 2;
                 }
-                else if (Input.GetKeyDown(KeyCode.E) == true)
+                else if (Input.GetKeyDown(KeyCode.Space) == true && fullInventory == false)
                 {
 
                 }
@@ -166,7 +219,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     highlightedPos = 0;
                 }
-                else if (Input.GetKeyDown(KeyCode.E) == true)
+                else if (Input.GetKeyDown(KeyCode.Space) == true)
                 {
 
                 }
@@ -213,6 +266,18 @@ public class PlayerController : MonoBehaviour {
         if(other.tag == "PreviousScene")
         {
             SceneManager.LoadScene(0);
+        }
+    }
+
+    private void CheckForZeros()
+    {
+        int itemToNumber = (int)item;
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            //if(inventory[i] == 0)
+            //{
+
+            //}
         }
     }
 }

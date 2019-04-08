@@ -50,11 +50,18 @@ public class CharacterDialogue : MonoBehaviour {
             lookingAtPlayer = false;
         }
 
-        if (lookingAtPlayer == true && Input.GetKeyDown(KeyCode.E))
+        if (inConversation == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            ContinueDialogue();
+        }
+
+        if (lookingAtPlayer == true && Input.GetKeyDown(KeyCode.Space))
         {
             if(inConversation == false && playerLooking == true)
             {
-                ActivateDialogue();
+                if (playerInMenu == true && playerMenuNum == 0) {
+                    ActivateDialogue();
+                }
             }
         }
 
@@ -65,12 +72,7 @@ public class CharacterDialogue : MonoBehaviour {
             inConversation = false;
         }
 
-        if(inConversation == true && Input.GetKeyDown(KeyCode.E))
-        {
-            if (playerInMenu == true && playerMenuNum == 0) {
-                ContinueDialogue();
-            }
-        }
+        
 
         //TEST
         if(gameObject.tag == "Main_Char_Model")
