@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector] public bool inConversation;
     [HideInInspector] public bool lookingAtSpeaker;
+
+    //0 is y = 25, 1 is y = 0, 2 is y = -25
+    [HideInInspector] public int highlightedPos;
+    [HideInInspector] public bool inMenu;
+    [HideInInspector] public bool inInventory;
     public float speed;
     public float rayMaxDistance;
     public CharacterDialogue characterDialogueScript;
@@ -25,13 +30,12 @@ public class PlayerController : MonoBehaviour {
     private int layerMask1;
     private int layerMask2;
     private int currentScene;
-    private bool inMenu;
-    private bool inInventory;
+    
+    
 
     private RectTransform highlightChoiceV3;
 
-    //0 is y = 25, 1 is y = 0, 2 is y = -25
-    private int highlightedPos;
+
 
     private void Awake()
     {
@@ -121,31 +125,32 @@ public class PlayerController : MonoBehaviour {
             //BEEP
             if(highlightedPos == 0)
             {
-                if (Input.GetKeyDown(KeyCode.W) == true)
+                if (Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true)
                 {
                     highlightedPos = 2;
                 }
-                else if (Input.GetKeyDown(KeyCode.S) == true)
+                else if (Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     highlightedPos = 1;
                 }
-                else if (Input.GetKeyDown(KeyCode.E))
+                else if (Input.GetKeyDown(KeyCode.E) == true)
                 {
-
+//                    inMenu = false;
+//                    choiceUI.SetActive(false);
                 }
             }
             //TAKE
             else if (highlightedPos == 1)
             {
-                if (Input.GetKeyDown(KeyCode.W) == true)
+                if (Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true)
                 {
                     highlightedPos = 0;
                 }
-                else if (Input.GetKeyDown(KeyCode.S) == true)
+                else if (Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     highlightedPos = 2;
                 }
-                else if (Input.GetKeyDown(KeyCode.E))
+                else if (Input.GetKeyDown(KeyCode.E) == true)
                 {
 
                 }
@@ -153,15 +158,15 @@ public class PlayerController : MonoBehaviour {
             //GIVE
             else if (highlightedPos == 2)
             {
-                if (Input.GetKeyDown(KeyCode.W) == true)
+                if (Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true)
                 {
                     highlightedPos = 1;
                 }
-                else if (Input.GetKeyDown(KeyCode.S) == true)
+                else if (Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     highlightedPos = 0;
                 }
-                else if (Input.GetKeyDown(KeyCode.E))
+                else if (Input.GetKeyDown(KeyCode.E) == true)
                 {
 
                 }

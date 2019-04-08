@@ -18,19 +18,25 @@ public class CharacterDialogue : MonoBehaviour {
 //    private int layerMask2;
     private bool lookingAtPlayer;
     private bool playerLooking;
+    private bool playerInMenu;
+    private int playerMenuNum;
 
 	void Start () {
         layerMask1 = 1 << 10;
 //        layerMask2 = 1 << 11;
         inConversation = false;
         endedDialogue = FindObjectOfType<DialogueController>().endedDialogue;
+        playerInMenu = FindObjectOfType<PlayerController>().inMenu;
+        playerMenuNum = FindObjectOfType<PlayerController>().highlightedPos;
 
         //TESTING DIALOGUE PARAMETER VARIABLE
         //dialogueParameter = 1;
 
-	}
+    }
 	
 	void Update () {
+        playerInMenu = FindObjectOfType<PlayerController>().inMenu;
+        playerMenuNum = FindObjectOfType<PlayerController>().highlightedPos;
         playerLooking = FindObjectOfType<PlayerController>().lookingAtSpeaker;
 
         RaycastHit hit;
@@ -61,7 +67,9 @@ public class CharacterDialogue : MonoBehaviour {
 
         if(inConversation == true && Input.GetKeyDown(KeyCode.E))
         {
-            ContinueDialogue();
+            if (playerInMenu == true && playerMenuNum == 0) {
+                ContinueDialogue();
+            }
         }
 
         //TEST
