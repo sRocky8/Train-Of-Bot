@@ -26,8 +26,10 @@ public class PlayerController : MonoBehaviour {
     //Public Variables
     public static PlayerController player;
     public Items item;
+    public int[] inventorySlot;
     public Image[] inventory;
-    public Image[] inventoryImage;
+    public Sprite[] inventoryImage;
+    public Items[] items;
     [HideInInspector] public bool inConversation;
     [HideInInspector] public bool lookingAtSpeaker;
 
@@ -71,12 +73,10 @@ public class PlayerController : MonoBehaviour {
         //        canMoveRight = true;
         //        canMoveForward = true;
 
-        //        choiceUI = gameObject.transform.Find("ChoiceImage").gameObject;
-        //        highlightChoice = gameObject.transform.Find("Highlight").gameObject;
-
         highlightChoiceV3 = highlightChoice.GetComponent<RectTransform>();
 
         layerMask1 = 1 << 9;
+        layerMask2 = 1 << 11;
         lookingAtSpeaker = false;
         inConversation = false;
         inMenu = false;
@@ -87,35 +87,11 @@ public class PlayerController : MonoBehaviour {
         switch (itemToNumber) {
             case 0:
                 break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;
-            case 9:
-                break;
-            case 10:
-                break;
-            case 11:
-                break;
-            case 12:
-                break;
         }
 
         for(int i = 0; i < inventory.Length; i++)
         {
-            inventory[i] = inventoryImage[0];
+            inventory[i].sprite = inventoryImage[0];
         }
         
 	}
@@ -205,7 +181,9 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && fullInventory == false)
                 {
-
+                    AddItem();
+                    inMenu = false;
+                    choiceUI.SetActive(false);
                 }
             }
             //GIVE
@@ -271,13 +249,170 @@ public class PlayerController : MonoBehaviour {
 
     private void CheckForZeros()
     {
-        int itemToNumber = (int)item;
-        for (int i = 0; i < inventory.Length; i++)
+        //int itemToNumber = (int)item;
+        for (int i = 0; i < inventorySlot.Length; i++)
         {
-            //if(inventory[i] == 0)
-            //{
+            if(inventorySlot[i] == 0)
+            {
+                fullInventory = false;
+                break;
+            }
+            else
+            {
+                fullInventory = true;
+            }
+        }
+    }
 
-            //}
+    private void AddItem()
+    {
+        int itemToNumber = (int)item;
+        RaycastHit itemHit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out itemHit, rayMaxDistance, layerMask2))
+        {
+            if (itemHit.collider.tag == "Earmuffs")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.Earmuffs;
+                        inventory[i].sprite = inventoryImage[(int)Items.Earmuffs];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "CabinetKey")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.CabinetKey;
+                        inventory[i].sprite = inventoryImage[(int)Items.CabinetKey];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "BottleOfBolts")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.BottleOfBolts;
+                        inventory[i].sprite = inventoryImage[(int)Items.BottleOfBolts];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "GasCanister")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.GasCanister;
+                        inventory[i].sprite = inventoryImage[(int)Items.GasCanister];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "FrozenMechanicalDinner")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.FrozenMechanicalDinner;
+                        inventory[i].sprite = inventoryImage[(int)Items.FrozenMechanicalDinner];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "CookedMechanicalDinner")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.CookedMechanicalDinner;
+                        inventory[i].sprite = inventoryImage[(int)Items.CookedMechanicalDinner];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "Plunger")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.Plunger;
+                        inventory[i].sprite = inventoryImage[(int)Items.Plunger];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "PassengersEye")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.PassengersEye;
+                        inventory[i].sprite = inventoryImage[(int)Items.PassengersEye];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "Valve")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.Valve;
+                        inventory[i].sprite = inventoryImage[(int)Items.Valve];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "ChefsSpoon")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.ChefsSpoon;
+                        inventory[i].sprite = inventoryImage[(int)Items.ChefsSpoon];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
+            if (itemHit.collider.tag == "Rattle")
+            {
+                for (int i = 0; i < inventorySlot.Length; i++)
+                {
+                    if (inventorySlot[i] == 0)
+                    {
+                        inventorySlot[i] = (int)Items.Rattle;
+                        inventory[i].sprite = inventoryImage[(int)Items.Rattle];
+                        Destroy(itemHit.collider);
+                        break;
+                    }
+                }
+            }
         }
     }
 }

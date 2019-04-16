@@ -6,6 +6,18 @@ TagManager:
   tags:
   - NextScene
   - PreviousScene
+  - Nothing
+  - Earmuffs
+  - CabinetKey
+  - BottleOfBolts
+  - GasCanister
+  - FrozenMechanicalDinner
+  - CookedMechanicalDinner
+  - Plunger
+  - PassengersEye
+  - Valve
+  - ChefsSpoon
+  - Rattle
   layers:
   - Default
   - TransparentFX

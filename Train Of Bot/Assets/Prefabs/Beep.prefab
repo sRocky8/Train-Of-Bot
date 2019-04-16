@@ -198,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1161799222351328
 GameObject:
   m_ObjectHideFlags: 1
@@ -1743,7 +1743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1e05b7a845fcb418f5dcb98692c1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory:
+  item: 0
+  inventorySlot: 0000000000000000000000000000000000000000000000000000000000000000
+  inventory:
   - {fileID: 114308197407613390}
   - {fileID: 114332637484307452}
   - {fileID: 114403891170276890}
@@ -1752,13 +1754,28 @@ MonoBehaviour:
   - {fileID: 114259238857163910}
   - {fileID: 114505287403987426}
   - {fileID: 114980271131494668}
+  inventoryImage:
+  - {fileID: 21300000, guid: 2599bf98db3d0f348aa1710f006d9286, type: 3}
+  - {fileID: 21300000, guid: af79e36b2e47e5449abc70a6971e7614, type: 3}
+  - {fileID: 21300000, guid: 040a6eb9ae5d9c149a4b84505d5f5dfd, type: 3}
+  - {fileID: 21300000, guid: 56582b26187413a4fa4a90f0a3bd0701, type: 3}
+  - {fileID: 21300000, guid: 00d0d4d539adc704e81c56eaf0b648f3, type: 3}
+  - {fileID: 21300000, guid: abf7746ffbde1364393c51c104a08e98, type: 3}
+  - {fileID: 21300000, guid: e33ec1037ff2d5e4091dec93d1bb5e9e, type: 3}
+  - {fileID: 21300000, guid: 6acf004117af97645a0e09b9885b772d, type: 3}
+  - {fileID: 21300000, guid: ae34e13241b33524e8ae25572b67c4d9, type: 3}
+  - {fileID: 21300000, guid: 49ebd4c4694320a40bbf947d57db83ac, type: 3}
+  - {fileID: 21300000, guid: 4adbcede745090442b7a279c58a1b876, type: 3}
+  - {fileID: 21300000, guid: 13a4ca3e35d3d8a488fa648c082229fc, type: 3}
+  - {fileID: 21300000, guid: 9e5d286ddde21a94fb4e8bb3d698c0d7, type: 3}
+  items: 0000000000000000000000000000000000000000000000000000000000000000
   inConversation: 0
   lookingAtSpeaker: 0
   highlightedPos: 0
   inMenu: 0
   inInventory: 0
-  speed: 10
-  rayMaxDistance: 2
+  speed: 3
+  rayMaxDistance: 3
   characterDialogueScript: {fileID: 0}
   choiceUI: {fileID: 1378565450245394}
   highlightChoice: {fileID: 1083346715826538}
