@@ -120,6 +120,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1047765080509288
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224376361031327454}
+  - component: {fileID: 222780464091691222}
+  - component: {fileID: 114379247068398378}
+  m_Layer: 10
+  m_Name: SelectCursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1083346715826538
 GameObject:
   m_ObjectHideFlags: 1
@@ -198,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1161799222351328
 GameObject:
   m_ObjectHideFlags: 1
@@ -1743,7 +1760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1e05b7a845fcb418f5dcb98692c1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 0
   inventorySlot: 0000000000000000000000000000000000000000000000000000000000000000
   inventory:
   - {fileID: 114308197407613390}
@@ -1774,11 +1790,13 @@ MonoBehaviour:
   highlightedPos: 0
   inMenu: 0
   inInventory: 0
-  speed: 3
+  speed: 7
   rayMaxDistance: 3
   characterDialogueScript: {fileID: 0}
   choiceUI: {fileID: 1378565450245394}
   highlightChoice: {fileID: 1083346715826538}
+  inventoryGameObject: {fileID: 1135956593803484}
+  InventoryCursor: {fileID: 1047765080509288}
 --- !u!114 &114332637484307452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1799,6 +1817,33 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114379247068398378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047765080509288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: eecd8e3180dadc1498f04b3a35081b51, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2201,6 +2246,13 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242558956036858}
   m_CullTransparentMesh: 0
+--- !u!222 &222780464091691222
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047765080509288}
+  m_CullTransparentMesh: 0
 --- !u!222 &222850027818544336
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2307,6 +2359,7 @@ RectTransform:
   - {fileID: 224477544114419630}
   - {fileID: 224353335131802396}
   - {fileID: 224827029491174654}
+  - {fileID: 224376361031327454}
   m_Father: {fileID: 224821732403899890}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2331,6 +2384,24 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 50, y: -60}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224376361031327454
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047765080509288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224291845113903306}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -150, y: 60}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224434822275181776

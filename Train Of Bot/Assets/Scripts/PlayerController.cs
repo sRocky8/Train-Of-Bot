@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     //Public Variables
     public static PlayerController player;
-    public Items item;
+    //public Items item;
     public int[] inventorySlot;
     public Image[] inventory;
     public Sprite[] inventoryImage;
@@ -35,6 +35,18 @@ public class PlayerController : MonoBehaviour {
 
     //0 is y = 25, 1 is y = 0, 2 is y = -25
     [HideInInspector] public int highlightedPos;
+
+    /*
+     * 0 is x = -150, y = 60
+     * 1 is x = -50, y = 60
+     * 2 is x = 50, y = 60
+     * 3 is x = 150, y = 60
+     * 4 is x = -150, y = -60
+     * 5 is x = -50, y = -60
+     * 6 is x = 50, y = -60
+     * 7 is x = 150, y = -60
+     */
+    [HideInInspector] public int inventoryCursorPos;
     [HideInInspector] public bool inMenu;
     [HideInInspector] public bool inInventory;
     public float speed;
@@ -43,6 +55,8 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject choiceUI;
     public GameObject highlightChoice;
+    public GameObject inventoryGameObject;
+    public GameObject inventoryCursor;
 
 
     //Private Variables
@@ -50,6 +64,7 @@ public class PlayerController : MonoBehaviour {
     //    private bool canMoveForward;
     //    private Rigidbody rb;
     private bool fullInventory;
+    private bool lookingAtInventory;
     private int layerMask1;
     private int layerMask2;
     private int currentScene;
@@ -82,12 +97,12 @@ public class PlayerController : MonoBehaviour {
         inMenu = false;
         inInventory = false;
 
-        int itemToNumber = (int)item;
+        //int itemToNumber = (int)item;
 
-        switch (itemToNumber) {
-            case 0:
-                break;
-        }
+        //switch (itemToNumber) {
+        //    case 0:
+        //        break;
+        //}
 
         for(int i = 0; i < inventory.Length; i++)
         {
@@ -104,11 +119,15 @@ public class PlayerController : MonoBehaviour {
             {
                 if (Input.GetKeyDown(KeyCode.E) == true && inConversation == false)
                 {
+                    if (lookingAtInventory == false)
+                    {
 
-                    inMenu = true;
-                    choiceUI.SetActive(true);
-                    highlightedPos = 0;
+                        inMenu = true;
+                        choiceUI.SetActive(true);
+                        highlightedPos = 0;
 
+
+                    }
                 }
                 if (inConversation == false)
                 {
@@ -136,6 +155,17 @@ public class PlayerController : MonoBehaviour {
 
                         transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
                         transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    {
+                        lookingAtInventory = true;
+                        inventoryGameObject.SetActive(true);
+                    }
+                    else if (Input.GetKeyUp(KeyCode.LeftShift))
+                    {
+                        lookingAtInventory = false;
+                        inventoryGameObject.SetActive(false);
                     }
                 }
             }
@@ -218,6 +248,17 @@ public class PlayerController : MonoBehaviour {
 
         }
 
+        if(inMenu == true && inInventory == true)
+        {
+            //EXIT
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                inInventory = false;
+                inventoryCursor.SetActive(false);
+                inventoryGameObject.SetActive(false);
+            }
+        }
+
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
         {
@@ -266,11 +307,12 @@ public class PlayerController : MonoBehaviour {
 
     private void AddItem()
     {
-        int itemToNumber = (int)item;
+        //int itemToNumber = (int)item;
         RaycastHit itemHit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out itemHit, rayMaxDistance, layerMask2))
         {
-            if (itemHit.collider.tag == "Earmuffs")
+            Debug.Log("HitObject");
+            if (itemHit.transform.tag.Equals("Earmuffs"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -278,12 +320,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Earmuffs;
                         inventory[i].sprite = inventoryImage[(int)Items.Earmuffs];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "CabinetKey")
+            if (itemHit.transform.tag.Equals("CabinetKey"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -291,12 +333,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.CabinetKey;
                         inventory[i].sprite = inventoryImage[(int)Items.CabinetKey];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "BottleOfBolts")
+            if (itemHit.transform.tag.Equals("BottleOfBolts"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -304,12 +346,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.BottleOfBolts;
                         inventory[i].sprite = inventoryImage[(int)Items.BottleOfBolts];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "GasCanister")
+            if (itemHit.transform.tag.Equals("GasCanister"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -317,12 +359,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.GasCanister;
                         inventory[i].sprite = inventoryImage[(int)Items.GasCanister];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "FrozenMechanicalDinner")
+            if (itemHit.transform.tag.Equals("FrozenMechanicalDinner"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -330,12 +372,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.FrozenMechanicalDinner;
                         inventory[i].sprite = inventoryImage[(int)Items.FrozenMechanicalDinner];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "CookedMechanicalDinner")
+            if (itemHit.transform.tag.Equals("CookedMechanicalDinner"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -343,12 +385,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.CookedMechanicalDinner;
                         inventory[i].sprite = inventoryImage[(int)Items.CookedMechanicalDinner];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "Plunger")
+            if (itemHit.transform.tag.Equals("Plunger"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -356,12 +398,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Plunger;
                         inventory[i].sprite = inventoryImage[(int)Items.Plunger];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "PassengersEye")
+            if (itemHit.transform.tag.Equals("PassengersEye"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -369,12 +411,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.PassengersEye;
                         inventory[i].sprite = inventoryImage[(int)Items.PassengersEye];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "Valve")
+            if (itemHit.transform.tag.Equals("Valve"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -382,12 +424,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Valve;
                         inventory[i].sprite = inventoryImage[(int)Items.Valve];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "ChefsSpoon")
+            if (itemHit.transform.tag.Equals("ChefsSpoon"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -395,12 +437,12 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.ChefsSpoon;
                         inventory[i].sprite = inventoryImage[(int)Items.ChefsSpoon];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
-            if (itemHit.collider.tag == "Rattle")
+            if (itemHit.transform.tag.Equals("Rattle"))
             {
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
@@ -408,11 +450,15 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Rattle;
                         inventory[i].sprite = inventoryImage[(int)Items.Rattle];
-                        Destroy(itemHit.collider);
+                        Destroy(itemHit.transform.gameObject);
                         break;
                     }
                 }
             }
+        }
+        else
+        {
+            Debug.Log("ObjectNotHit");
         }
     }
 }
