@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject inventoryGameObject;
     public GameObject inventoryCursor;
 
+    public Animator playerAnimator;
 
     //Private Variables
     //    private bool canMoveRight;
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour {
     private int currentScene;
     private RectTransform highlightChoiceV3;
     private RectTransform inventoryChoice;
+    private bool moving;
 
     private void Awake()
     {
@@ -89,6 +91,8 @@ public class PlayerController : MonoBehaviour {
         //        rb = GetComponent<Rigidbody>();
         //        canMoveRight = true;
         //        canMoveForward = true;
+
+        playerAnimator = gameObject.GetComponent<Animator>();
 
         highlightChoiceV3 = highlightChoice.GetComponent<RectTransform>();
         inventoryChoice = inventoryCursor.GetComponent<RectTransform>();
@@ -146,23 +150,33 @@ public class PlayerController : MonoBehaviour {
                     {
                         transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
                         transform.eulerAngles = new Vector3(0.0f, 90.0f, 0.0f);
+                        playerAnimator.Play("Walk");
+                        playerAnimator.SetBool("moving", true);
                     }
                     else if (moveHorizontal < 0.0f)
                     {
-
                         transform.Translate(Vector3.right * moveHorizontal * (speed / 100.0f), Space.World);
                         transform.eulerAngles = new Vector3(0.0f, 270.0f, 0.0f);
+                        playerAnimator.Play("Walk");
+                        playerAnimator.SetBool("moving", true);
                     }
                     else if (moveVertical > 0.0f)
                     {
                         transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
                         transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                        playerAnimator.Play("Walk");
+                        playerAnimator.SetBool("moving", true);
                     }
                     else if (moveVertical < 0.0f)
                     {
-
                         transform.Translate(Vector3.forward * moveVertical * (speed / 100.0f), Space.World);
                         transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
+                        playerAnimator.Play("Walk");
+                        playerAnimator.SetBool("moving", true);
+                    }
+                    else
+                    {
+                        playerAnimator.SetBool("moving", false);
                     }
 
                     if (Input.GetKeyDown(KeyCode.LeftShift))
