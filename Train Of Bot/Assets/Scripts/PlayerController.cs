@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector] public int inventoryCursorPos;
     [HideInInspector] public bool inMenu;
     [HideInInspector] public bool inInventory;
+    [HideInInspector] public bool givingItem;
     public float speed;
     public float rayMaxDistance;
     public CharacterDialogue characterDialogueScript;
@@ -69,6 +70,7 @@ public class PlayerController : MonoBehaviour {
     private int layerMask2;
     private int currentScene;
     private RectTransform highlightChoiceV3;
+    private RectTransform inventoryChoice;
 
     private void Awake()
     {
@@ -89,6 +91,7 @@ public class PlayerController : MonoBehaviour {
         //        canMoveForward = true;
 
         highlightChoiceV3 = highlightChoice.GetComponent<RectTransform>();
+        inventoryChoice = inventoryCursor.GetComponent<RectTransform>();
 
         layerMask1 = 1 << 9;
         layerMask2 = 1 << 11;
@@ -96,6 +99,7 @@ public class PlayerController : MonoBehaviour {
         inConversation = false;
         inMenu = false;
         inInventory = false;
+        givingItem = false;
 
         //int itemToNumber = (int)item;
 
@@ -113,6 +117,10 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(givingItem == true)
+        {
+            givingItem = false;
+        }
         if (inInventory == false)
         {
             if (inMenu == false)
@@ -170,7 +178,246 @@ public class PlayerController : MonoBehaviour {
                 }
             }
         }
+        //INVENTORY MENU
+        if (inMenu == true && inInventory == true)
+        {
+            //EXIT
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                inventoryCursor.SetActive(false);
+                inventoryGameObject.SetActive(false);
+                inInventory = false;
+            }
 
+            //ITEM 1
+            if (inventoryCursorPos == 0)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 4;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 1;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 3;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+            //ITEM 2
+            else if (inventoryCursorPos == 1)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 5;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 2;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 0;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+            //ITEM 3
+            else if (inventoryCursorPos == 2)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 6;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 3;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 1;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+            //ITEM 4
+            else if (inventoryCursorPos == 3)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 7;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 0;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 2;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+            //ITEM 5
+            else if (inventoryCursorPos == 4)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 0;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 5;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 7;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+            //ITEM 6
+            else if (inventoryCursorPos == 5)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 1;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 6;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 4;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+            //ITEM 7
+            else if (inventoryCursorPos == 6)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 2;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 7;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 5;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+            //ITEM 8
+            else if (inventoryCursorPos == 7)
+            {
+                if ((Input.GetKeyDown(KeyCode.W) == true || Input.GetKeyDown(KeyCode.UpArrow) == true) ||
+                    ((Input.GetKeyDown(KeyCode.S) == true || Input.GetKeyDown(KeyCode.DownArrow) == true)))
+                {
+                    inventoryCursorPos = 3;
+                }
+                else if (Input.GetKeyDown(KeyCode.D) == true || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventoryCursorPos = 4;
+                }
+                else if (Input.GetKeyDown(KeyCode.A) == true || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventoryCursorPos = 6;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
+                {
+                    inMenu = false;
+                    choiceUI.SetActive(false);
+                    inInventory = false;
+                    inventoryCursor.SetActive(false);
+                    inventoryGameObject.SetActive(false);
+                }
+            }
+
+            switch (inventoryCursorPos)
+            {
+                case 0:
+                    inventoryChoice.anchoredPosition = new Vector3(-150.0f, 60.0f, 0.0f);
+                    break;
+                case 1:
+                    inventoryChoice.anchoredPosition = new Vector3(-50.0f, 60.0f, 0.0f);
+                    break;
+                case 2:
+                    inventoryChoice.anchoredPosition = new Vector3(50.0f, 60.0f, 0.0f);
+                    break;
+                case 3:
+                    inventoryChoice.anchoredPosition = new Vector3(150.0f, 60.0f, 0.0f);
+                    break;
+                case 4:
+                    inventoryChoice.anchoredPosition = new Vector3(-150.0f, -60.0f, 0.0f);
+                    break;
+                case 5:
+                    inventoryChoice.anchoredPosition = new Vector3(-50.0f, -60.0f, 0.0f);
+                    break;
+                case 6:
+                    inventoryChoice.anchoredPosition = new Vector3(50.0f, -60.0f, 0.0f);
+                    break;
+                case 7:
+                    inventoryChoice.anchoredPosition = new Vector3(150.0f, -60.0f, 0.0f);
+                    break;
+            }
+        }
 
         if (inMenu == true && inInventory == false)
         {
@@ -229,7 +476,10 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true)
                 {
-
+                    inInventory = true;
+                    inventoryGameObject.SetActive(true);
+                    inventoryCursor.SetActive(true);
+                    inventoryCursorPos = 0;
                 }
             }
 
@@ -248,20 +498,12 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        if(inMenu == true && inInventory == true)
-        {
-            //EXIT
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                inInventory = false;
-                inventoryCursor.SetActive(false);
-                inventoryGameObject.SetActive(false);
-            }
-        }
+
 
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
         {
+            Debug.Log("Player Looking at NPC");
             inConversation = hit.collider.gameObject.GetComponent<CharacterDialogue>().inConversation;
             lookingAtSpeaker = true;
         }

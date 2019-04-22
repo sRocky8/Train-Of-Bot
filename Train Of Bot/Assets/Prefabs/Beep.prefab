@@ -1788,15 +1788,17 @@ MonoBehaviour:
   inConversation: 0
   lookingAtSpeaker: 0
   highlightedPos: 0
+  inventoryCursorPos: 0
   inMenu: 0
   inInventory: 0
+  givingItem: 0
   speed: 7
   rayMaxDistance: 3
   characterDialogueScript: {fileID: 0}
   choiceUI: {fileID: 1378565450245394}
   highlightChoice: {fileID: 1083346715826538}
   inventoryGameObject: {fileID: 1135956593803484}
-  InventoryCursor: {fileID: 1047765080509288}
+  inventoryCursor: {fileID: 1047765080509288}
 --- !u!114 &114332637484307452
 MonoBehaviour:
   m_ObjectHideFlags: 1

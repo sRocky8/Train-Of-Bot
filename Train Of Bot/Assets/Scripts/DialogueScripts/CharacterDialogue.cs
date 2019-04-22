@@ -13,42 +13,46 @@ public class CharacterDialogue : MonoBehaviour {
     public int dialogueParameter;
     public DialogueClass npcDialogue;
 
-    //Private Variables
-    private int layerMask1;
-//    private int layerMask2;
-    private bool lookingAtPlayer;
-    private bool playerLooking;
-    private bool playerInMenu;
-    private int playerMenuNum;
+    //Protected Variables
+    protected RaycastHit hit;
+
+    protected int layerMask1;
+    protected bool lookingAtPlayer;
+    protected bool playerLooking;
+
+    protected bool playerInMenu;
+    protected int playerMenuNum;
+
+    protected bool playerInInventory;
+    protected int playerInventoryNum;
+
 
 	void Start () {
         layerMask1 = 1 << 10;
-//        layerMask2 = 1 << 11;
         inConversation = false;
         endedDialogue = FindObjectOfType<DialogueController>().endedDialogue;
         playerInMenu = FindObjectOfType<PlayerController>().inMenu;
         playerMenuNum = FindObjectOfType<PlayerController>().highlightedPos;
-
+        playerInInventory = FindObjectOfType<PlayerController>().inInventory;
+        playerInventoryNum = FindObjectOfType<PlayerController>().inventoryCursorPos;
         //TESTING DIALOGUE PARAMETER VARIABLE
         //dialogueParameter = 1;
 
     }
 	
 	void Update () {
+        TalkWithNPC();
+	}
+
+    protected void TalkWithNPC()
+    {
         playerInMenu = FindObjectOfType<PlayerController>().inMenu;
         playerMenuNum = FindObjectOfType<PlayerController>().highlightedPos;
         playerLooking = FindObjectOfType<PlayerController>().lookingAtSpeaker;
+        playerInInventory = FindObjectOfType<PlayerController>().inInventory;
+        playerInventoryNum = FindObjectOfType<PlayerController>().inventoryCursorPos;
 
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
-        {
-            Debug.Log("hit Player");
-            lookingAtPlayer = true;
-        }
-        else
-        {
-            lookingAtPlayer = false;
-        }
+        RaycastForPlayer();
 
         if (inConversation == true && Input.GetKeyDown(KeyCode.Space))
         {
@@ -57,44 +61,42 @@ public class CharacterDialogue : MonoBehaviour {
 
         if (lookingAtPlayer == true && Input.GetKeyDown(KeyCode.Space))
         {
-            if(inConversation == false && playerLooking == true)
+            if (inConversation == false && playerLooking == true)
             {
-                if (playerInMenu == true && playerMenuNum == 0) {
+                if (playerInMenu == true && playerMenuNum == 0)
+                {
                     ActivateDialogue();
                 }
             }
         }
 
         endedDialogue = FindObjectOfType<DialogueController>().endedDialogue;
-        
-        if(endedDialogue == true)
+
+        if (endedDialogue == true)
         {
             inConversation = false;
         }
 
-        
-
         //TEST
-        if(gameObject.tag == "Main_Char_Model")
+        if (gameObject.name == "Main_Char_Model")
         {
-
-
-            dialogueParameter = 0;
+            dialogueParameter = 1;
         }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-	}
+    protected void RaycastForPlayer()
+    {
+        
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
+        {
+            Debug.Log("hit Player");
+            lookingAtPlayer = true;
+        }
+        else
+        {
+            lookingAtPlayer = false;
+        }
+    }
 
     public void ActivateDialogue()
     {
