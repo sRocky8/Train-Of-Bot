@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-	// Use this for initialization
+    //Public Variables
+    public Vector3 offset;
+
+    //Private Variables
+    private Transform playerTransform;
+    
 	void Start () {
-		
+        playerTransform = gameObject.transform.Find("Beep");
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		
+        transform.position = playerTransform.position - offset;
 	}
 }
