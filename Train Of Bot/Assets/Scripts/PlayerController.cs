@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour {
     private RectTransform highlightChoiceV3;
     private RectTransform inventoryChoice;
     private bool moving;
+    private string personClass;
 
     private void Awake()
     {
@@ -433,6 +434,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
+        //MENU
         if (inMenu == true && inInventory == false)
         {
             //EXIT
@@ -518,7 +520,8 @@ public class PlayerController : MonoBehaviour {
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
         {
             Debug.Log("Player Looking at NPC");
-            inConversation = hit.collider.gameObject.GetComponent<CharacterDialogue>().inConversation;
+            personClass = hit.transform.tag;
+            WhatDialogueClass(hit);
             lookingAtSpeaker = true;
         }
         else
@@ -715,6 +718,38 @@ public class PlayerController : MonoBehaviour {
         else
         {
             Debug.Log("ObjectNotHit");
+        }
+    }
+
+    private void WhatDialogueClass(RaycastHit hit)
+    {
+        if (hit.transform.name == "EarmuffsGuy")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+        }
+        else if (hit.transform.name == "Dog")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+        }
+        else if (hit.transform.name == "Mom")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+        }
+        else if (hit.transform.name == "Boy")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+        }
+        else if (hit.transform.name == "Chef")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+        }
+        else if (hit.transform.name == "ToiletMan")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+        }
+        else if (hit.transform.name == "Main_Char_Model")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
         }
     }
 }

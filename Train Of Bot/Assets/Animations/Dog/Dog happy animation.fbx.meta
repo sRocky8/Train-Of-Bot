@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: ee8a57f258d26b94ebac582526296d0a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bottom
+    100002: //RootNode
+    100004: Dog_back_l_wheel_Controller
+    100006: Dog_back_r_wheel_Controller
+    100008: Dog_Bot_Mesh
+    100010: Dog_Chest
+    100012: Dog_chest_Controller
+    100014: Dog_Core
+    100016: Dog_core_Controller
+    100018: Dog_Face
+    100020: Dog_front_l_wheel_Controller
+    100022: Dog_front_r_wheel_Controller
+    100024: Dog_Head
+    100026: Dog_head_Controller
+    100028: Dog_Hip
+    100030: Dog_hip_Controller
+    100032: Dog_Jaw_1
+    100034: Dog_Jaw_2
+    100036: Dog_jaw_Controller
+    100038: Dog_L_Back_Hip
+    100040: Dog_L_Back_Wheel
+    100042: Dog_L_Front_Shoulder
+    100044: Dog_L_Front_Wheel
+    100046: Dog_l_hip_Controller
+    100048: Dog_l_hip_Controller 1
+    100050: Dog_Neck_1
+    100052: Dog_Neck_2
+    100054: Dog_R_Back_Hip
+    100056: Dog_R_Back_Wheel
+    100058: Dog_R_Front_Shoulder
+    100060: Dog_R_Front_Wheel
+    100062: Dog_r_hip_Controller
+    100064: Dog_r_shoulder_Controller
+    100066: Dog_Tail_1
+    100068: Dog_Tail_2
+    100070: Dog_Tail_3
+    100072: Dog_Tail_4
+    100074: Dog_tail_Controller
+    400000: bottom
+    400002: //RootNode
+    400004: Dog_back_l_wheel_Controller
+    400006: Dog_back_r_wheel_Controller
+    400008: Dog_Bot_Mesh
+    400010: Dog_Chest
+    400012: Dog_chest_Controller
+    400014: Dog_Core
+    400016: Dog_core_Controller
+    400018: Dog_Face
+    400020: Dog_front_l_wheel_Controller
+    400022: Dog_front_r_wheel_Controller
+    400024: Dog_Head
+    400026: Dog_head_Controller
+    400028: Dog_Hip
+    400030: Dog_hip_Controller
+    400032: Dog_Jaw_1
+    400034: Dog_Jaw_2
+    400036: Dog_jaw_Controller
+    400038: Dog_L_Back_Hip
+    400040: Dog_L_Back_Wheel
+    400042: Dog_L_Front_Shoulder
+    400044: Dog_L_Front_Wheel
+    400046: Dog_l_hip_Controller
+    400048: Dog_l_hip_Controller 1
+    400050: Dog_Neck_1
+    400052: Dog_Neck_2
+    400054: Dog_R_Back_Hip
+    400056: Dog_R_Back_Wheel
+    400058: Dog_R_Front_Shoulder
+    400060: Dog_R_Front_Wheel
+    400062: Dog_r_hip_Controller
+    400064: Dog_r_shoulder_Controller
+    400066: Dog_Tail_1
+    400068: Dog_Tail_2
+    400070: Dog_Tail_3
+    400072: Dog_Tail_4
+    400074: Dog_tail_Controller
+    2000000: bottom
+    2100000: lambert2
+    4300000: Dog_Bot_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Dog_Bot_Mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

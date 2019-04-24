@@ -16,7 +16,7 @@ public class CharacterDialogue : MonoBehaviour {
     //Protected Variables
     protected RaycastHit hit;
 
-    protected int layerMask1;
+    protected int layerMask1 = 1 << 10;
     protected bool lookingAtPlayer;
     protected bool playerLooking;
 
@@ -26,9 +26,10 @@ public class CharacterDialogue : MonoBehaviour {
     protected bool playerInInventory;
     protected int playerInventoryNum;
 
+    protected int i;
+
 
 	void Start () {
-        layerMask1 = 1 << 10;
         inConversation = false;
         endedDialogue = FindObjectOfType<DialogueController>().endedDialogue;
         playerInMenu = FindObjectOfType<PlayerController>().inMenu;
@@ -41,6 +42,7 @@ public class CharacterDialogue : MonoBehaviour {
     }
 	
 	void Update () {
+        Debug.Log("Activating TalkWithNPC");
         TalkWithNPC();
 	}
 
@@ -78,15 +80,14 @@ public class CharacterDialogue : MonoBehaviour {
         }
 
         //TEST
-        if (gameObject.name == "Main_Char_Model")
-        {
-            dialogueParameter = 1;
-        }
+        //if (gameObject.name == "Main_Char_Model")
+        //{
+        //    dialogueParameter = 0;
+        //}
     }
 
     protected void RaycastForPlayer()
     {
-        
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
         {
             Debug.Log("hit Player");
