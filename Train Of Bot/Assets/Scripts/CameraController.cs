@@ -9,9 +9,9 @@ public class CameraController : MonoBehaviour {
 
     //Private Variables
     private Transform playerTransform;
-    
-	void Start () {
-        playerTransform = gameObject.transform.Find("Beep");
+
+    void Start () {
+        playerTransform = FindObjectOfType<PlayerController>().transform;
 	}
 	
 	void Update () {
