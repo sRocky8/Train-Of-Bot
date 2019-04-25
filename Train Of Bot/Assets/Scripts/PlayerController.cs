@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour {
     private RectTransform highlightChoiceV3;
     private RectTransform inventoryChoice;
     private bool moving;
-    private string personClass;
 
     private void Awake()
     {
@@ -106,21 +105,12 @@ public class PlayerController : MonoBehaviour {
         inInventory = false;
         givingItem = false;
 
-        //int itemToNumber = (int)item;
-
-        //switch (itemToNumber) {
-        //    case 0:
-        //        break;
-        //}
-
         for(int i = 0; i < inventory.Length; i++)
         {
             inventory[i].sprite = inventoryImage[0];
-        }
-        
+        }    
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if(givingItem == true)
         {
@@ -520,7 +510,6 @@ public class PlayerController : MonoBehaviour {
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
         {
             Debug.Log("Player Looking at NPC");
-            personClass = hit.transform.tag;
             WhatDialogueClass(hit);
             lookingAtSpeaker = true;
         }

@@ -15,6 +15,7 @@ public class CharacterDialogue : MonoBehaviour {
 
     //Protected Variables
     protected RaycastHit hit;
+    protected int[] playerInventorySlot;
 
     protected int layerMask1 = 1 << 10;
     protected bool lookingAtPlayer;
@@ -36,6 +37,8 @@ public class CharacterDialogue : MonoBehaviour {
         playerMenuNum = FindObjectOfType<PlayerController>().highlightedPos;
         playerInInventory = FindObjectOfType<PlayerController>().inInventory;
         playerInventoryNum = FindObjectOfType<PlayerController>().inventoryCursorPos;
+        playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
+
         //TESTING DIALOGUE PARAMETER VARIABLE
         //dialogueParameter = 1;
 
@@ -53,6 +56,7 @@ public class CharacterDialogue : MonoBehaviour {
         playerLooking = FindObjectOfType<PlayerController>().lookingAtSpeaker;
         playerInInventory = FindObjectOfType<PlayerController>().inInventory;
         playerInventoryNum = FindObjectOfType<PlayerController>().inventoryCursorPos;
+        playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
 
         RaycastForPlayer();
 
@@ -61,13 +65,25 @@ public class CharacterDialogue : MonoBehaviour {
             ContinueDialogue();
         }
 
-        if (lookingAtPlayer == true && Input.GetKeyDown(KeyCode.Space))
+        if (lookingAtPlayer == true)
         {
             if (inConversation == false && playerLooking == true)
             {
-                if (playerInMenu == true && playerMenuNum == 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    ActivateDialogue();
+                    if(playerMenuNum == 2 && playerInInventory == false)
+                    {
+                        playerInInventory = true;
+                    }
+                    else if (playerMenuNum == 2 && playerInInventory == true)
+                    {
+                        ActivateDialogue();
+                        playerInInventory = false;
+                    }
+                    else if (playerMenuNum != 2)
+                    {
+                        ActivateDialogue();
+                    }
                 }
             }
         }
@@ -109,5 +125,13 @@ public class CharacterDialogue : MonoBehaviour {
     {
         FindObjectOfType<DialogueController>().ShowNextLine();
         Debug.Log("Continued Dialogue");
+    }
+
+    private IEnumerator WaitForSpace(KeyCode Space)
+    {
+        while (!Input.GetKeyDown(Space))
+        {
+            yield return null;
+        }
     }
 }

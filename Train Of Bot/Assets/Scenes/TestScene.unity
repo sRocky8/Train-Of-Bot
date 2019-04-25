@@ -389,6 +389,15 @@ MonoBehaviour:
     - parameterDescription: Give
       linesOfDialogue:
       - Thanks.
+    - parameterDescription: Beep Given
+      linesOfDialogue:
+      - Nice.
+    - parameterDescription: Take Given
+      linesOfDialogue:
+      - NO STOP!
+    - parameterDescription: Give Wrong Item
+      linesOfDialogue:
+      - I don't need this...
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
