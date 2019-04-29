@@ -11,4 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene2.unity
     guid: 59fee98a67459c443838abd6f870201d
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 735e452f6c999b048912223a744a3df7
+  - enabled: 1
+    path: Assets/Scenes/Storage.unity
+    guid: 06a6a1cb320546749adcc067336ea437
+  - enabled: 1
+    path: Assets/Scenes/Residence.unity
+    guid: 0dd9d88ed919fad4e9eacb2a7729043a
+  - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: b1ba8d2715d8fbc42bf45b3ceac9f21c
+  - enabled: 1
+    path: Assets/Scenes/Bathroom.unity
+    guid: dfdeabc541c98c945ae9763d19d562b5
+  - enabled: 1
+    path: Assets/Scenes/EngineRoom.unity
+    guid: bc81619d16145864ab8ac965b8fb071d
   m_configObjects: {}

@@ -367,28 +367,28 @@ public class PlayerController : MonoBehaviour {
             switch (inventoryCursorPos)
             {
                 case 0:
-                    inventoryChoice.anchoredPosition = new Vector3(-150.0f, 60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(-150.0f, 55.0f, 0.0f);
                     break;
                 case 1:
-                    inventoryChoice.anchoredPosition = new Vector3(-50.0f, 60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(-50.0f, 55.0f, 0.0f);
                     break;
                 case 2:
-                    inventoryChoice.anchoredPosition = new Vector3(50.0f, 60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(50.0f, 55.0f, 0.0f);
                     break;
                 case 3:
-                    inventoryChoice.anchoredPosition = new Vector3(150.0f, 60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(150.0f, 55.0f, 0.0f);
                     break;
                 case 4:
-                    inventoryChoice.anchoredPosition = new Vector3(-150.0f, -60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(-150.0f, -55.0f, 0.0f);
                     break;
                 case 5:
-                    inventoryChoice.anchoredPosition = new Vector3(-50.0f, -60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(-50.0f, -55.0f, 0.0f);
                     break;
                 case 6:
-                    inventoryChoice.anchoredPosition = new Vector3(50.0f, -60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(50.0f, -55.0f, 0.0f);
                     break;
                 case 7:
-                    inventoryChoice.anchoredPosition = new Vector3(150.0f, -60.0f, 0.0f);
+                    inventoryChoice.anchoredPosition = new Vector3(150.0f, -55.0f, 0.0f);
                     break;
             }
         }
@@ -461,13 +461,13 @@ public class PlayerController : MonoBehaviour {
             switch (highlightedPos)
             {
                 case 0:
-                    highlightChoiceV3.anchoredPosition = new Vector3(0.0f, 25.0f, 0.0f);
+                    highlightChoiceV3.anchoredPosition = new Vector3(0.0f, 41.39f, 0.0f);
                     break;
                 case 1:
-                    highlightChoiceV3.anchoredPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                    highlightChoiceV3.anchoredPosition = new Vector3(0.0f, 1.1f, 0.0f);
                     break;
                 case 2:
-                    highlightChoiceV3.anchoredPosition = new Vector3(0.0f, -25.0f, 0.0f);
+                    highlightChoiceV3.anchoredPosition = new Vector3(0.0f, -37.2f, 0.0f);
                     break;
             }
 

@@ -15,6 +15,10 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	void Update () {
+        if (playerTransform == null)
+        {
+            playerTransform = FindObjectOfType<PlayerController>().transform;
+        }
         transform.position = playerTransform.position - offset;
 	}
 }

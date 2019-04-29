@@ -30,7 +30,7 @@ public class EarmuffsGuy : CharacterDialogue {
         {
             for (int i = 0; i < playerInventorySlot.Length; i++)
             {
-                if (playerInventorySlot[i] != (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] != (int)Items.Earmuffs)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
@@ -41,7 +41,7 @@ public class EarmuffsGuy : CharacterDialogue {
                         dialogueParameter = 5;
                     }
                 }
-                if (playerInventorySlot[i] == (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.Earmuffs)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {

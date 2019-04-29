@@ -133,12 +133,4 @@ public class CharacterDialogue : MonoBehaviour {
         FindObjectOfType<DialogueController>().ShowNextLine();
         Debug.Log("Continued Dialogue");
     }
-
-    private IEnumerator WaitForSpace(KeyCode Space)
-    {
-        while (!Input.GetKeyDown(Space))
-        {
-            yield return null;
-        }
-    }
 }
