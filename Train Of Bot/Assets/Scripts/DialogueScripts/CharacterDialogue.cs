@@ -75,10 +75,17 @@ public class CharacterDialogue : MonoBehaviour {
                     {
                         playerInInventory = true;
                     }
-                    else if (playerMenuNum == 2 && playerInInventory == true)
+                    else if (playerMenuNum == 2)
                     {
-                        ActivateDialogue();
-                        playerInInventory = false;
+                        if (playerInInventory == true)
+                        {
+                            ActivateDialogue();
+                            playerInInventory = false;
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
                     else if (playerMenuNum != 2)
                     {

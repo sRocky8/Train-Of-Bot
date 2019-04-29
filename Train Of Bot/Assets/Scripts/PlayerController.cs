@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour {
         //        canMoveRight = true;
         //        canMoveForward = true;
 
+        currentScene = SceneManager.GetActiveScene().buildIndex;
         playerAnimator = gameObject.GetComponent<Animator>();
 
         highlightChoiceV3 = highlightChoice.GetComponent<RectTransform>();
@@ -212,11 +213,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
             //ITEM 2
@@ -237,11 +234,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
             //ITEM 3
@@ -262,11 +255,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
             //ITEM 4
@@ -287,11 +276,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
             //ITEM 5
@@ -312,11 +297,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
             //ITEM 6
@@ -337,11 +318,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
             //ITEM 7
@@ -362,11 +339,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
             //ITEM 8
@@ -387,11 +360,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) == true && lookingAtSpeaker == true)
                 {
-                    inMenu = false;
-                    choiceUI.SetActive(false);
-                    inInventory = false;
-                    inventoryCursor.SetActive(false);
-                    inventoryGameObject.SetActive(false);
+                    CloseInventoryMenu();
                 }
             }
 
@@ -526,13 +495,21 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "NextScene")
+        if (other.tag == "NextScene" && inMenu == false)
         {
-            SceneManager.LoadScene(1);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                currentScene = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(currentScene + 1);
+            }
         }
-        if(other.tag == "PreviousScene")
+        if(other.tag == "PreviousScene" && inMenu == false)
         {
-            SceneManager.LoadScene(0);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                currentScene = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(currentScene - 1);
+            }
         }
     }
 
@@ -740,5 +717,15 @@ public class PlayerController : MonoBehaviour {
         {
             inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
         }
+    }
+
+    private void CloseInventoryMenu()
+    {
+        inMenu = false;
+        choiceUI.SetActive(false);
+        inInventory = false;
+        inventoryCursor.SetActive(false);
+        inventoryGameObject.SetActive(false);
+        inventoryCursorPos = 0;
     }
 }

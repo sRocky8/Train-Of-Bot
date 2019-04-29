@@ -26,15 +26,25 @@ public class EarmuffsGuy : CharacterDialogue {
         {
             dialogueParameter = 1;
         }
-        else if (playerMenuNum == 2)
+        else if (playerMenuNum == 2 && playerInInventory == true)
         {
             for (int i = 0; i < playerInventorySlot.Length; i++)
             {
+                if (playerInventorySlot[i] != (int)Items.Earmuffs)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space) == true)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        dialogueParameter = 5;
+                    }
+                }
                 if (playerInventorySlot[i] == (int)Items.Earmuffs)
                 {
-                    if (playerInInventory == true)
+                    if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        dialogueParameter = 2;
                         FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
                         FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
                         canRecieveItem = false;
@@ -42,7 +52,7 @@ public class EarmuffsGuy : CharacterDialogue {
                     }
                     else
                     {
-                        return;
+                        dialogueParameter = 2;
                     }
                 }
             }
@@ -54,16 +64,6 @@ public class EarmuffsGuy : CharacterDialogue {
         else if (playerMenuNum == 1 && canRecieveItem == false)
         {
             dialogueParameter = 4;
-        }
-        else if (playerMenuNum == 2 && playerInInventory == true)
-        {
-            for (int i = 0; i < playerInventorySlot.Length; i++)
-            {
-                if (playerInventorySlot[i] != (int)Items.Earmuffs)
-                {
-                    dialogueParameter = 5;
-                }
-            }
         }
     }
 }
