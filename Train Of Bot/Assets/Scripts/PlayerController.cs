@@ -113,7 +113,8 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Update () {
-        if(givingItem == true)
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        if (givingItem == true)
         {
             givingItem = false;
         }
