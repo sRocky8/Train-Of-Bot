@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PassengersEye : MonoBehaviour {
 
+    public bool taken = false;
+
     private void Awake()
     {
         try
         {
-            transform.position = DataStorage.dataStorage.storageRoomBoxPos;
+            taken = DataStorage.dataStorage.passengersEyeTaken;
+
+            if (taken == true)
+            {
+                Destroy(gameObject);
+            }
         }
         catch
         {
@@ -18,6 +25,6 @@ public class PassengersEye : MonoBehaviour {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.storageRoomBoxPos = transform.position;
+        DataStorage.dataStorage.passengersEyeTaken = taken;
     }
 }

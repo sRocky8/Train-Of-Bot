@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class BottleOfBolts : MonoBehaviour {
 
+    public bool taken = false;
+
     private void Awake()
     {
         try
         {
-            transform.position = DataStorage.dataStorage.storageRoomBoxPos;
+            taken = DataStorage.dataStorage.bottleOfBoltsTaken;
+
+            if (taken == true)
+            {
+                Destroy(gameObject);
+            }
         }
         catch
         {
@@ -18,6 +25,6 @@ public class BottleOfBolts : MonoBehaviour {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.storageRoomBoxPos = transform.position;
+        DataStorage.dataStorage.bottleOfBoltsTaken = taken;
     }
 }

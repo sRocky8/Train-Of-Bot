@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FrozenMechanicalDinner : MonoBehaviour {
 
+    public bool taken;
+
     private void Awake()
     {
         try

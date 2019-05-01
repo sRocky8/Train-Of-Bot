@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class CabinetKey : MonoBehaviour {
 
+    public bool taken = false;
+
     private void Awake()
     {
         try
         {
-            transform.position = DataStorage.dataStorage.storageRoomBoxPos;
+            taken = DataStorage.dataStorage.cabinetKeyTaken;
+
+            if (taken == true)
+            {
+                Destroy(gameObject);
+            }
         }
         catch
         {
@@ -18,6 +25,6 @@ public class CabinetKey : MonoBehaviour {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.storageRoomBoxPos = transform.position;
+        DataStorage.dataStorage.cabinetKeyTaken = taken;
     }
 }

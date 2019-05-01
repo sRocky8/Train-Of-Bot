@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Plunger : MonoBehaviour {
 
+    public bool taken = false;
+
     private void Awake()
     {
         try
         {
-            transform.position = DataStorage.dataStorage.storageRoomBoxPos;
+            taken = DataStorage.dataStorage.plungerTaken;
+
+            if (taken == true)
+            {
+                Destroy(gameObject);
+            }
         }
         catch
         {
@@ -18,6 +25,6 @@ public class Plunger : MonoBehaviour {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.storageRoomBoxPos = transform.position;
+        DataStorage.dataStorage.plungerTaken = taken;
     }
 }

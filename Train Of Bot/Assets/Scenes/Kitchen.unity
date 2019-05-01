@@ -160,6 +160,17 @@ MonoBehaviour:
   storageRoomBoxPos: {x: 12.68865, y: -9.108707, z: 14.47236}
   testCharacterCanRecieve: 0
   testCharacterCanGive: 0
+  bottleOfBoltsTaken: 0
+  cabinetKeyTaken: 0
+  chefsSpoonTaken: 0
+  cookedMechanicalDinnerTaken: 0
+  earmuffsTaken: 0
+  frozenMechanicalDinnerTaken: 0
+  gasCanisterTaken: 0
+  passengersEyeTaken: 0
+  plungerTaken: 0
+  rattleTaken: 0
+  valveTaken: 0
 --- !u!4 &557260055
 Transform:
   m_ObjectHideFlags: 0
@@ -293,15 +304,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4089195207096846, guid: f77c872f99cd9894096e7d54cccffdd0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -86.33
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4089195207096846, guid: f77c872f99cd9894096e7d54cccffdd0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.185748
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 4089195207096846, guid: f77c872f99cd9894096e7d54cccffdd0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 10.08
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4089195207096846, guid: f77c872f99cd9894096e7d54cccffdd0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -410,7 +421,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 972349185}
   m_LocalRotation: {x: 0.15941755, y: -0, z: -0, w: 0.9872113}
-  m_LocalPosition: {x: -22.75, y: -0.386, z: -7.138}
+  m_LocalPosition: {x: 43.22, y: -0.386, z: -7.138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

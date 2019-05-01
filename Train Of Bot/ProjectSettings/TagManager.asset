@@ -18,6 +18,7 @@ TagManager:
   - Valve
   - ChefsSpoon
   - Rattle
+  - Box
   layers:
   - Default
   - TransparentFX

@@ -1,20 +1,26 @@
 fileFormatVersion: 2
-guid: d15849040866a974faff33e60a288514
+guid: 87c56e89732e4c940831001ba30071eb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box001
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 789bdde772c69954e8c57e4887584bb7, type: 2}
+    100000: Box001
+    100002: Box002
+    100004: Box003
+    100006: //RootNode
+    100008: transform1
+    100010: transform2
+    400000: Box001
+    400002: Box002
+    400004: Box003
+    400006: //RootNode
+    400008: transform1
+    400010: transform2
+    2100000: lambert1
+    2300000: Box003
+    3300000: Box003
+    4300000: Box003
+    9500000: //RootNode
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,8 +71,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -91,7 +97,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -546,6 +546,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Earmuffs;
                         inventory[i].sprite = inventoryImage[(int)Items.Earmuffs];
+                        itemHit.transform.gameObject.GetComponent<Earmuffs>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -559,6 +560,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.CabinetKey;
                         inventory[i].sprite = inventoryImage[(int)Items.CabinetKey];
+                        itemHit.transform.gameObject.GetComponent<CabinetKey>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -572,6 +574,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.BottleOfBolts;
                         inventory[i].sprite = inventoryImage[(int)Items.BottleOfBolts];
+                        itemHit.transform.gameObject.GetComponent<BottleOfBolts>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -585,6 +588,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.GasCanister;
                         inventory[i].sprite = inventoryImage[(int)Items.GasCanister];
+                        itemHit.transform.gameObject.GetComponent<GasCanister>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -598,6 +602,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.FrozenMechanicalDinner;
                         inventory[i].sprite = inventoryImage[(int)Items.FrozenMechanicalDinner];
+                        itemHit.transform.gameObject.GetComponent<FrozenMechanicalDinner>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -611,6 +616,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.CookedMechanicalDinner;
                         inventory[i].sprite = inventoryImage[(int)Items.CookedMechanicalDinner];
+                        itemHit.transform.gameObject.GetComponent<CookedMechanicalDinner>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -624,6 +630,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Plunger;
                         inventory[i].sprite = inventoryImage[(int)Items.Plunger];
+                        itemHit.transform.gameObject.GetComponent<Plunger>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -637,6 +644,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.PassengersEye;
                         inventory[i].sprite = inventoryImage[(int)Items.PassengersEye];
+                        itemHit.transform.gameObject.GetComponent<PassengersEye>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -650,6 +658,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Valve;
                         inventory[i].sprite = inventoryImage[(int)Items.Valve];
+                        itemHit.transform.gameObject.GetComponent<Valve>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -663,6 +672,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.ChefsSpoon;
                         inventory[i].sprite = inventoryImage[(int)Items.ChefsSpoon];
+                        itemHit.transform.gameObject.GetComponent<ChefsSpoon>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
@@ -676,6 +686,7 @@ public class PlayerController : MonoBehaviour {
                     {
                         inventorySlot[i] = (int)Items.Rattle;
                         inventory[i].sprite = inventoryImage[(int)Items.Rattle];
+                        itemHit.transform.gameObject.GetComponent<Rattle>().taken = true;
                         Destroy(itemHit.transform.gameObject);
                         break;
                     }
